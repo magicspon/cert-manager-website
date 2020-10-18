@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}" class="no-js">
+  <head>
+    {{ partial "head.html" . }}
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <style>
+      .enterprise-page {
+        min-height: 100vh;
+        background: linear-gradient(247deg, rgb(195, 55, 100), rgb(29, 38, 113));
+        padding: 100px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .enterprise-page h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+      }
+
+      .enterprise-page p {
+        font-size: 18px;
+      }
+
+      .enterprise-page__box {
+        max-width: 50rem;
+      }
+    </style>
+  </head>
+  <body class="td-{{ .Kind }}">
+    <header>
+      {{ partial "navbar.html" . }}
+    </header>
+    <div class="enterprise-page">
+     <div class="enterprise-page__box">
+      <h1>One provider (in box): <br />cert-manager Enterprise</h1>
+      <p>Features and enterprise-grade support for cert-manager from the creators and maintainers of the open source project <a href="https://www.jetstack.io/cert-manager">cert-manager</a></p>
+     </div>
+    </div>
+    <div style="width: 100%; overflow: hidden">
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>
