@@ -13,7 +13,7 @@
       <li class="nav-item dropdown d-none d-lg-block">
         {{ partial "navbar-version-selector.html" . }}
       </li>
-      {{ else }}
+      {{ end }}
       <li>
         <a class="nav-link" href="/docs/installation/">Get Started</a>
       </li>
@@ -23,10 +23,9 @@
       <li>
         <a class="nav-link" href="/#community">Community</a>
       </li>
-      {{/*  <li>
+      <li>
         <a class="nav-link" href="/enterprise">Enterprise</a>
-      </li>  */}}
-      {{ end }}
+      </li>
       {{ $p := . }}
       {{ range .Site.Menus.main }}
         {{ $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
