@@ -1,17 +1,31 @@
 {{ $cover := .HasShortcode "blocks/cover" }}
 {{ $master := .Site.Params.masterfolder}}
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar">
+  
   <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
     <span class="navbar-logo">{{ with resources.Get "/icons/logo.svg" }}{{ ( . | minify).Content | safeHTML }} {{ end }}</span>
     <span class="brand-name font-weight-bold">{{ .Site.Title }}</span>
   </a>
   <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
-    <ul class="navbar-nav mt-2 mt-lg-0">
+    <ul class="navbar-nav mt-2 mt-lg-0 mr-4">
       {{/* Display doc version selector menu for "docs" or "v#.#-docs" sections */}}
       {{ if or (in .Page.Section "docs") (in .Page.Section $master) }}
       <li class="nav-item dropdown d-none d-lg-block">
         {{ partial "navbar-version-selector.html" . }}
       </li>
+      {{ else }}
+      <li>
+        <a class="nav-link" href="/docs/installation/">Get Started</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/docs/">Docs</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/#community">Community</a>
+      </li>
+      {{/*  <li>
+        <a class="nav-link" href="/enterprise">Enterprise</a>
+      </li>  */}}
       {{ end }}
       {{ $p := . }}
       {{ range .Site.Menus.main }}
