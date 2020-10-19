@@ -29,33 +29,102 @@
 @import "footer";
 
 @if $td-enable-google-fonts {
-    @import url($web-font-path);
+  @import url($web-font-path);
 }
 
 footer {
-    min-height: 150px;
+  min-height: 150px;
 
-    @include media-breakpoint-down(md) {
-         min-height: 200px;
-    }
+  @include media-breakpoint-down(md) {
+    min-height: 200px;
+  }
 }
 
 // Adjust anchors vs the fixed menu.
 @include media-breakpoint-up(md) {
-    .td-offset-anchor:target {
-        display: block;
-        position: relative;
-        top: -4rem;
-        visibility: hidden;
-    }
+  .td-offset-anchor:target {
+    display: block;
+    position: relative;
+    top: -4rem;
+    visibility: hidden;
+  }
 
-    h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before {
-        display: block;
-        content: " ";
-        margin-top: -5rem;
-        height: 5rem;
-        visibility: hidden;
-    }
+  h2[id]:before,
+  h3[id]:before,
+  h4[id]:before,
+  h5[id]:before {
+    display: block;
+    content: " ";
+    margin-top: -5rem;
+    height: 5rem;
+    visibility: hidden;
+  }
 }
 
 @import "styles_project";
+
+.white-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 425px;
+}
+.white-tile--cert {
+  padding: 20px 40px;
+}
+.white-tile {
+  background-color: #fff;
+  padding: 50px 40px;
+  margin: 20px;
+  box-shadow: 0 3px 33px 0 rgba(0, 0, 0, 0.16);
+  flex: 0 0 calc(50% - 40px);
+}
+
+.Cert__about-icon-container {
+  width: 200px;
+  margin: auto;
+  flex-shrink: 0;
+}
+
+.Cert__about-icon {
+  position: relative;
+  padding-top: 100%;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Cert__about-icon > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.Cert__about-icon .hex {
+  width: 100%;
+  height: 100%;
+}
+
+.Cert__about-icon .icon {
+  object-fit: contain;
+  width: 100%;
+  height: 30px;
+}
+
+.white-tile__title {
+  margin: 0 0 30px;
+  font-size: 24px;
+}
+
+.remove-padding-y {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.remove-padding-t {
+  padding-top: 0px !important;
+}
