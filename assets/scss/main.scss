@@ -141,3 +141,75 @@ footer {
 .remove-padding-t {
   padding-top: 0px !important;
 }
+
+.enterprise-page {
+  position: relative;
+  width: 100%;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #1a1a1a;
+  background: #f1f1f1;
+
+  @include media-breakpoint-up(md) {
+    justify-content: start;
+    padding: 180px 40px 100px;
+  }
+}
+
+.enterprise-page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0rem;
+}
+
+.enterprise-page p {
+  font-size: 18px;
+}
+
+.enterprise-page__box {
+  max-width: 30rem;
+}
+
+.enterprise-pill {
+  max-width: 25rem;
+  padding: 2rem;
+  color: #fff;
+  border-radius: 0.5em;
+  box-shadow: 0 0 15px 1px rgba(250, 250, 250, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(247deg, rgb(195, 55, 100), rgb(29, 38, 113));
+  position: relative;
+}
+
+.enterprise-pill p {
+  margin: 0;
+}
+
+.enterprise-pill h1 {
+  transition: transform 1.5s ease-in-out;
+  margin-bottom: 5px;
+  transform-origin: 0 50%;
+}
+
+.enterprise-pill:hover h1 {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.enterprise-pill:hover p {
+  color: #fff;
+}
+
+.enterprise-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  fill: white;
+  opacity: 0.05;
+  width: 80%;
+  display: block;
+  pointer-events: none;
+}
